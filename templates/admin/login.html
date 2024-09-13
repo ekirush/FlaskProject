@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Login{% endblock title %}
+
+{% block content %}
+<div class="d-flex justify-content-center align-items-center pt-3">
+    <div class="card-body" style="max-width: 540px;">
+        <h2>Login Page</h2>
+        <form action="{{url_for("admin.login")}}", method="POST">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control form-control-sm w-100" name="username" placeholder="Username"/>
+            </div>
+            <div class="input-group mb-3">
+                <input type="password" class="form-control form-control-sm w-100" name="password" placeholder="Password" />
+            </div>
+            <button type="submit" class="btn btn-primary btn-sm w-100">Submit</button>
+        </form>
+    </div>
+</div>
+
+{% endblock content %}
+
+       

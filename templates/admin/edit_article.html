@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block title %}Edit Article{% endblock title %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h2 class="mb-4">Edit Article</h2>
+            
+            <!-- Displaying the form -->
+            <form method="POST" action="{{ url_for('admin.edit_article', aid=article.aid) }}" enctype="multipart/form-data">
+                
+                <!-- Title Field -->
+                <div class="form-group mb-3">
+                    <label for="title" class="form-label">Title</label>
+                    <input type="text" class="form-control" id="title" name="title" value="{{ article.title }}" required>
+                </div>
+
+                <!-- Content Field (Textarea) -->
+                <div class="form-group mb-3">
+                    <label for="content" class="form-label">Content</label>
+                    <textarea class="form-control" id="content" name="content" rows="10" required>{{ article.content }}</textarea>
+                </div>
+
+                <!-- Image Upload Field -->
+                <div class="form-group mb-3">
+                    <label for="image" class="form-label">Upload New Image (optional)</label>
+                    <input type="file" class="form-control" id="image" name="image">
+                </div>
+
+                <!-- Display current image -->
+                {% if article.image_file %}
+                <div class="form-group mb-3">
+                    <label>Current Image:</label>
+                    <div class="mb-3">
+                        <img src="{{ url_for('static', filename='images/' + article.image_file) }}" alt="Article Image" class="img-fluid rounded">
+                    </div>
+                </div>
+                {% endif %}
+
+                <!-- Submit Button -->
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-primary btn-block mt-3">Update Article</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Script to integrate CKEditor with the content field -->
+<script>
+    CKEDITOR.replace('content');  // Apply CKEditor to the textarea
+</script>
+
+{% endblock content %}

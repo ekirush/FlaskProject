@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}About Sparkle The Web{% endblock title %}
+
+{% block content %}
+<div class="container-fluid">
+    <!-- Hero Section -->
+    <div class="row hero-section py-5 text-center" style="background-color: white;">
+        <div class="col-md-10 offset-md-1">
+            <h1 class="display-4 mb-3" style="color: #14A800; font-weight: bold;">ABOUT SPARKLE THE WEB</h1>
+            <p class="lead">Your partner in growing your online business with tailored SEO strategies.</p>
+        </div>
+    </div>
+
+    <!-- About Section with Image and Text -->
+    <div class="row about-section py-5" style="background-color: #ccc;">
+        <div class="col-md-6 d-flex align-items-center justify-content-center text-left">
+            <p class="lead px-5 ">At Sparkle the Web, we specialize in providing actionable, factual, and tested search engine optimization (SEO) tips. Our sole focus is on helping businesses grow by improving their online presence through Off-Page SEO, On-Page SEO, and Technical SEO strategies.</p>
+        </div>
+        <div class="col-md-6 text-center">
+            <img src="{{ url_for('static', filename='images/about_us_image.png') }}" alt="About Sparkle the Web" class="img-fluid rounded">
+        </div>
+    </div>
+
+
+    <!-- Call to Action Section -->
+    <div class="row cta-section py-5 text-center">
+        <div class="col-md-10 offset-md-1">
+            <h3 class="mb-3">Ready to Improve Your SEO?</h3>
+            <a href="{{ url_for('blog.contact') }}" class="btn btn-lg btn-success" style="background-color: #14A800;">Contact Us</a>
+        </div>
+    </div>
+</div>
+{% endblock content %}

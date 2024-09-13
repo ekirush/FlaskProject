@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}Portfolio{% endblock title %}
+
+{% block content %}
+<div class="container-fluid">
+    <!-- Hero Section -->
+    <div class="row hero-section py-5 text-center" style="background-color: white;">
+        <div class="col-md-10 offset-md-1">
+            <h1 class="display-4 mb-3" style="color: #14A800; font-weight: bold;">Mind Behind Sparkle The Web</h1>
+        </div>
+    </div>
+
+    <!-- About Section with Image and Text -->
+    <div class="row about-section py-5" style="background-color: #ccc;">
+        <div class="col-md-4 text-center">
+            <img src="{{ url_for('static', filename='images/Erastus.jpg') }}" alt="Erastus Irungu" class="img-fluid rounded-circle mb-3" style="max-width: 250px; border: 5px solid #14A800;">
+        </div>
+        <div class="col-md-8 d-flex flex-column justify-content-center">
+            <h1 class="mb-4" style="font-weight: bold;">ERASTUS IRUNGU</h1>
+            <p class="lead">I am Erastus, the mind behind <a href="{{url_for('blog.home')}}" style="color: #14A800; font-weight: bold;">Sparkle the Web</a>. A dedicated Data Analyst with a passion for transforming raw data into actionable insights.</p>
+            <p class="mb-2"><strong>Skills:</strong> Proficient in Python for data manipulation and analysis, SQL for database management, Flask (Web framework in Python) for web development, and adept at applying Machine Learning algorithms to extract meaningful patterns from complex datasets.</p>
+            <p class="mb-2"><strong>Experience:</strong> I've honed my skills through diverse roles, from managing data projects and creating detailed reports at various organizations to contributing as a Web Developer and Research Assistant. My experience includes collaborating on impactful projects and providing IT support, all geared towards optimizing data-driven solutions.</p>
+            <p class="mb-2"><strong>Passion:</strong> I'm passionate about big data, digital marketing, and leveraging technology for community-centered solutions.</p>
+            <p><strong>Let's connect!</strong> Whether you're looking to harness the power of data or exploring collaborative opportunities, I'm eager to discuss how my skills can contribute to your data-driven initiatives.</p>
+        </div>
+    </div>
+</div>
+{% endblock content %}

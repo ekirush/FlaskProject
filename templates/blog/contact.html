@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block title %}Contact Us{% endblock title %}
+
+{% block content %}
+<div class="container-fluid">
+    <!-- Hero Section -->
+    <div class="row py-5 text-center" style="background-color: white;">
+        <div class="col-md-10 offset-md-1">
+            <h1 class="display-4 mb-3" style="color: #14A800; font-weight: bold;">Contact Us</h1>
+        </div>
+    </div>
+
+    <!-- Contact Information and Form -->
+    <div class="row py-5 d-flex align-items-center">
+        <!-- Contact Information -->
+        <div class="col-md-6 d-flex flex-column justify-content-center">
+            <h2>Get in touch</h2>
+            <p>We would love to hear from you! Whether you have questions about our services, need assistance, or just want to connect, feel free to reach out using the contact form or the information below.</p>
+            <ul class="list-unstyled">
+                <li><strong>Email:</strong> <a href="mailto:info@sparkletheweb.net">info@sparkletheweb.net</a> </li>
+                <li><strong>Phone:</strong> <a href="tel:+254762863040">+254 762 863 040</a></li>
+                <li><strong>WhatsApp:</strong> <a href="https://wa.me/+254762863040">+254 762 863 040</a> </li>
+            </ul>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="col-md-6">
+            <form method="POST" action="{{ url_for('blog.contact') }}">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Your Name</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Your Email</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="subject" class="form-label">Subject</label>
+                    <input type="text" class="form-control" id="subject" name="subject" required>
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Your Message</label>
+                    <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-success" style="background-color: #14A800; border: none;">Send Message</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock content %}

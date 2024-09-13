@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}Article Posting{% endblock title %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h2 class="mb-4">Edit Article</h2>
+            <form action="{{ url_for("admin.create_article") }}" method="POST" enctype="multipart/form-data">
+                <!-- Title Field -->
+                <div class="form-group mb-3">
+                    <label for="title" class="form-label">Title</label>
+                    <input type="text" class="form-control" id="title" name="title" placeholder="Article Title" required>
+                </div>
+
+                <!-- Content Field -->
+                <div class="form-group mb-3">
+                    <label for="content" class="form-label">Content</label>
+                    <textarea class="form-control" id="content" name="content" rows="5" placeholder="Enter your content here..." required></textarea>
+                </div>
+
+                <!-- Image Upload -->
+                <div class="form-group mb-4">
+                    <label for="image" class="form-label">Upload Image</label>
+                    <input type="file" class="form-control" id="image" name="image">
+                </div>
+
+                <!-- Submit Button -->
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Script to integrate CKEditor with the content field -->
+<script>
+    CKEDITOR.replace('content');  // Apply CKEditor to the textarea
+</script>
+
+{% endblock content %}
