@@ -39,3 +39,6 @@ def create_app():
     app.register_blueprint(blog_blueprint)
     
     return app
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=8000)
